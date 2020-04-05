@@ -1,4 +1,4 @@
-import { Task } from './../../dist/tasks/task.model.d';
+import { Task } from './task.model';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
