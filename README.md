@@ -5,3 +5,9 @@ Pipes son decoradores/funciones que se inyectan a nuestros DTO y controladores p
 1. [Class Validator](https://github.com/typestack/class-validator)
 2. [Class Transformer](https://github.com/typestack/class-transformer)
    - `yarn add class-validator class-transformer`
+
+### Object Relation Mapping - [Type ORM](https://typeorm.io/#/)
+
+En este proyecto se utiliza Type ORM con PostgreSQL
+
+- `yarn add @nestjs/typeorm typeorm pg`
