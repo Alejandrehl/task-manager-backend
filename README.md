@@ -11,3 +11,11 @@ Pipes son decoradores/funciones que se inyectan a nuestros DTO y controladores p
 En este proyecto se utiliza Type ORM con PostgreSQL
 
 - `yarn add @nestjs/typeorm typeorm pg`
+
+### Expresión regular para strong password
+
+- Expresión Regular: `/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/`
+  1.  La contraseña debe contener al menos una letra mayúscula
+  2.  La contraseña debe contener al menos una letra minúscula
+  3.  La contraseña debe contener al menos un número o un caracter especial
+  4.  ### No válida el largo del string
