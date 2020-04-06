@@ -34,7 +34,7 @@ export class UserRepository extends Repository<User> {
     const user = await this.findOne({ username });
 
     if (user && (await user.validatePassword(password))) {
-      const { password, salt, ...result } = user;
+      const { password, salt, tasks, ...result } = user;
       return result;
     }
     return null;
