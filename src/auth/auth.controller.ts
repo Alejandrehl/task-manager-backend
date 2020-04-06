@@ -1,3 +1,4 @@
+import { User } from './user.entity';
 import { AuthService } from './auth.service';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import {
@@ -9,6 +10,7 @@ import {
   Req,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { GetUser } from './get-user.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -30,8 +32,9 @@ export class AuthController {
 
   @Post('/test')
   @UseGuards(AuthGuard())
-  test(@Req() req) {
+  test(@GetUser() user: User) {
     console.log('API que solo puede ser accedida por un usuario autenticado.');
-    console.log(req);
+    const { password, salt, ...result } = user;
+    return result;
   }
 }
