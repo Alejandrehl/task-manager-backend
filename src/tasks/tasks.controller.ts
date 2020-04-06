@@ -61,7 +61,7 @@ export class TasksController {
     @GetUser() user: User,
   ): Promise<Task> {
     this.logger.verbose(
-      `User "${user.username}" creating new task. Body ${JSON.stringify(
+      `User "${user.username}" creating new task. Data ${JSON.stringify(
         createTaskDto,
       )}`,
     );
@@ -74,6 +74,9 @@ export class TasksController {
     @Body('status', TaskStatusValidationPipe) status: TaskStatus,
     @GetUser() user: User,
   ): Promise<Task> {
+    this.logger.verbose(
+      `User "${user.username}" updating task ${id} with new status ${status}`,
+    );
     return this.tasksService.updateTaskStatus(id, status, user);
   }
 
@@ -82,9 +85,7 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User,
   ): Promise<void> {
-    this.logger.verbose(
-      `User "${user.username}" trying to delete task with ID ${id}`,
-    );
+    this.logger.verbose(`User "${user.username}" deleting task with ID ${id}`);
     return this.tasksService.deleteTask(id, user);
   }
 }
