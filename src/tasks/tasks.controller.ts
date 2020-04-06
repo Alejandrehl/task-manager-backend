@@ -38,7 +38,7 @@ export class TasksController {
   @Get(':id')
   getTaskById(
     @Param('id', ParseIntPipe) id: number,
-    user: User,
+    @GetUser() user: User,
   ): Promise<Task> {
     return this.tasksService.getTaskById(id, user);
   }
