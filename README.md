@@ -23,3 +23,15 @@ En este proyecto se utiliza Type ORM con PostgreSQL
   2.  La contraseña debe contener al menos una letra minúscula
   3.  La contraseña debe contener al menos un número o un caracter especial
   4.  No válida el largo del string
+
+### Ejemplo de una acción que solo puede ser accedida por un usuario autenticado. Usa un custom decorator llamado GetUser.
+
+```javascript
+  @Post('/test')
+  @UseGuards(AuthGuard())
+  test(@GetUser() user: User) {
+    console.log('API que solo puede ser accedida por un usuario autenticado.');
+    const { password, salt, ...result } = user;
+    return result;
+  }
+```
