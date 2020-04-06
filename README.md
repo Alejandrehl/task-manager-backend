@@ -12,6 +12,10 @@ En este proyecto se utiliza Type ORM con PostgreSQL
 
 - `yarn add @nestjs/typeorm typeorm pg`
 
+### Passport JWT
+
+- `yarn add @nestjs/jwt @nestjs/passport passport passport-jwt`
+
 ### Expresión regular para strong password
 
 - Expresión Regular: `/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/`
