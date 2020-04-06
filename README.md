@@ -43,10 +43,3 @@ En este proyecto se utiliza Type ORM con PostgreSQL
     return result;
   }
 ```
-
-### Pasos para desplegar una aplicación Nest JS en AWS
-
-1. Crear/Ingresar a tu cuenta de [AWS](https://aws.amazon.com/)
-2. Ir a la consola de AWS
-3. Seleccionar el servicio `S3`
-4. Crear nuevo bucket: Click en `Create bucket`
