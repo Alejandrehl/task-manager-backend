@@ -1,5 +1,4 @@
 import { JwtPayload } from './jwt-payload.interface';
-import { User } from './user.entity';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from './user.repository';
