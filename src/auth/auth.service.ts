@@ -1,3 +1,4 @@
+import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from './user.repository';
 import { Injectable } from '@nestjs/common';
@@ -8,4 +9,8 @@ export class AuthService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
   ) {}
+
+  async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
+    return await this.userRepository.signUp(authCredentialsDto);
+  }
 }
