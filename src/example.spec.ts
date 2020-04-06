@@ -22,4 +22,9 @@ describe('FriendsList', () => {
     friendList.addFriend('Alejandro');
     expect(friendList.friends.length).toEqual(1);
   });
+
+  it('announces friendship', () => {
+    const friendList = new FriendList();
+    friendList.addFriend('Alejandro');
+  });
 });
