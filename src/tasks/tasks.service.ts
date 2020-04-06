@@ -1,3 +1,4 @@
+import { User } from './../auth/user.entity';
 import { TaskRepository } from './task.repository';
 import { TaskStatus } from './task-status.enum';
 import { Task } from './task.entity';
@@ -23,8 +24,8 @@ export class TasksService {
     return found;
   }
 
-  async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
-    return this.taskRepository.createTask(createTaskDto);
+  async createTask(createTaskDto: CreateTaskDto, user: User): Promise<Task> {
+    return this.taskRepository.createTask(createTaskDto, user);
   }
 
   async updateTaskStatus(id: number, status: TaskStatus): Promise<Task> {
