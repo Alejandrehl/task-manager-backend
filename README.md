@@ -3,7 +3,7 @@
 1. Clonar repositorio `git clone git@github.com:Alejandrehl/alehernandezsite-backend.git`
 2. Entrar a la carpeta "root" del proyecto
 3. Ejecutar el comando `yarn install`
-4. Ajustar la config de la conexión a la base de datos en `src/config/typeorm.config.ts`
+4. Ajustar la config de la conexión a la base de datos en las variables de los archivos `.yml` en la carpeta `src/config`
 5. Correr el proyecto con `yarn start:dev`
 
 ### Pipes
