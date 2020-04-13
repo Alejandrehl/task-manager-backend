@@ -43,3 +43,10 @@ En este proyecto se utiliza Type ORM con PostgreSQL
     return result;
   }
 ```
+
+### Pre Production
+
+1. Ajustar script `start:prod` en `package.json`: Se debe agregar `NODE_ENV=production` al comienzo del string value.
+2. Mover dependencias de `devDependencies` a `dependencies`: Mover `@types/express`, `@types/node`, `ts-node`, `typescript`
+
+- Para desplegar se debe comprimir el proyecto sin la carpeta `node_modules`, luego cargar el archivo comprimido en el panel de tu instancia de `Elastic Beanstalk`
