@@ -1,11 +1,16 @@
 import { IsString, MinLength, MaxLength, Matches } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class AuthCredentialsDto {
+  
+  @ApiProperty()
   @IsString()
   @MinLength(4)
   @MaxLength(20)
   username: string;
 
+
+  @ApiProperty()
   @IsString()
   @MinLength(8)
   @MaxLength(20)
@@ -13,5 +18,7 @@ export class AuthCredentialsDto {
     message:
       'Password must contains at least 1 uppercase letter, 1 lower case letter and 1 number or special character.',
   })
+  
+  @ApiProperty()
   password: string;
 }
